@@ -32,11 +32,13 @@ class barangController extends Controller
        $request->validate([
         'barang'=>'required|string|max:255',
         'harga'=>'required',
+        'jenis' =>'required',
        ]);
 
        $produk = new barang;
        $produk->nama = $request->barang;
        $produk->harga = $request->harga;
+       $produk->jenis = $request->jenis;
        $produk->kode_barang = $request->kode_barang;
        $produk->save();
 
@@ -76,6 +78,8 @@ class barangController extends Controller
         $barang->update([
             'nama' => $request->nama,
             'harga' => $request->harga,
+            'kode_barang' => $request->kode_barang,
+            'jenis' => $request->jenis,
         ]);
 
 

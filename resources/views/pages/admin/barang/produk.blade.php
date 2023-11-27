@@ -28,6 +28,7 @@
                                 <th>Nama</th>
                                 <th>Harga</th>
                                 <th>Kode Barang</th>
+                                <th>Jenis</th>
                                 <th>Tanggal</th>
                                  @if (Auth::user()->role == 'manager')
                                 <th>Aksi</th>
@@ -43,6 +44,7 @@
                                     <td>{{ $p->nama }}</td>
                                     <td>{{ $p->harga }}</td>
                                     <td>{{ $p->kode_barang }}</td>
+                                    <td>{{ $p->jenis }}</td>
                                     <td>{{ $p->created_at }}</td>
                                     @if (Auth::user()->role == 'manager')
                                     <td>

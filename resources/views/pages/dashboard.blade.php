@@ -49,8 +49,9 @@
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">pendaptan bulanan
+                            <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                    pendaptan bulanan   
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
@@ -73,8 +74,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Total</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ number_format($total->sum('total_harga')) }}
+                                    Pendapatan Tahunan</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ number_format($perTahun->sum('total_harga')) }}
                                 </div>
                             </div>
                             <div class="col-auto">

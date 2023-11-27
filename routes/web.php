@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/destroy_cart/{id_barang}', [kasirController::class, 'destroy_cart'])->name('destroy_cart');
     Route::post('/simpan_pembelian', [kasirController::class, 'store'])->name('simpan_pembelian');
     Route::get('/stroke', [kasirController::class, 'stroke'])->name('stroke');
-    // Produk 
+    // Produk
     Route::get('/produk', [barangController::class, 'index'])->name('produk');
     Route::get('/tambah_produk', [barangController::class, 'create'])->name('tambah_produk');
     Route::get('/edit_produk/{id_barang}', [barangController::class, 'edit'])->name('edit_produk');
@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/riwayat_pembelian', [riwayatPembelianController::class, 'index'])->name('riwayat_pembelian');
     Route::get('/destroy_pembelian/{id_pembelian}', [riwayatPembelianController::class, 'destroy'])->name('destroy_pembelian');
     Route::get('/show_pembelian/{id_pembelian}', [riwayatPembelianController::class, 'show'])->name('show_pembelian');
+    Route::get('/riwayatByUser/{id_user}', [riwayatPembelianController::class, 'riwayatByUser'])->name('riwayatByUser');
     // User
     Route::get('/user', [userController::class, 'index'])->name('user')->middleware('akses:manager');
     Route::get('/tambah_user', [userController::class, 'create'])->name('create_user')->middleware('akses:manager');

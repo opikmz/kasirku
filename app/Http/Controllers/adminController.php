@@ -14,6 +14,7 @@ class adminController extends Controller
         $perHari = id_pembelian::whereDate('created_at', Carbon::today())->get();
         $perMinggu = id_pembelian::whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->get();
         $perBulan = id_pembelian::whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->get();
+        $perTahun = id_pembelian::whereBetween('created_at', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])->get();
         // $perTahun = id_pembelian::whereBetween('created_at', [Carbon::now()->startOfyear(), Carbon::now()->endOfYear()])->get();
         $keuangan = [];
         $tahunan = Carbon::now()->year;
@@ -24,6 +25,6 @@ class adminController extends Controller
             $keuangan[$awalBulan->format('M')] = id_pembelian::whereBetween('created_at',[$awalBulan,$akhirBulan])->sum('total_harga');
         }
         // dd($keuangan);
-        return view('pages.dashboard',compact('total','perHari','perMinggu','perBulan','keuangan'));
+        return view('pages.dashboard',compact('total','perHari','perMinggu','perBulan','keuangan','perTahun'));
     }
 }

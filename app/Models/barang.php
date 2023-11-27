@@ -15,6 +15,7 @@ class barang extends Model
         'nama',
         'harga',
         'kode_barang',
+        'jenis',
     ];
     public function toPembelian()
     {

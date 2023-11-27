@@ -16,8 +16,10 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Pendapatan harian </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $perHari->sum('total_harga') }}</div>
+                                    <a href="#perHari">Pendapatan harian </a>
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $perHari->sum('total_harga') }}
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -33,8 +35,9 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                   Pendapatan mingguan</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $perMinggu->sum('total_harga') }}</div>
+                                    Pendapatan mingguan</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $perMinggu->sum('total_harga') }}
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -53,7 +56,8 @@
                                 </div>
                                 <div class="row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp.{{ $perBulan->sum('total_harga') }}</div>
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                            Rp.{{ $perBulan->sum('total_harga') }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +75,9 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                   Total</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $total->sum('total_harga') }}</div>
+                                    Total</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp.{{ $total->sum('total_harga') }}
+                                </div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -84,7 +89,7 @@
         </div>
 
 
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4" id="perHari">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data hari ini </h6>
             </div>
@@ -125,9 +130,9 @@
                         </tfoot>
                         <tbody>
                             @foreach ($perHari as $key => $p)
-                            @php
-                            $user = App\Models\User::find($p->id_user);
-                            @endphp
+                                @php
+                                    $user = App\Models\User::find($p->id_user);
+                                @endphp
                                 <tr>
                                     <td> <a href="/show_pembelian/{{ $p->id_pembelian }}"> {{ $p->id_pembelian }} </a></td>
                                     <td>{{ $p->created_at }}</td>
@@ -197,16 +202,16 @@
                         </tfoot>
                         <tbody>
                             @foreach ($pembelian as $key => $p)
-                            @php
-                            $user = App\Models\User::find($p->id_user);
-                            @endphp
+                                @php
+                                    $user = App\Models\User::find($p->id_user);
+                                @endphp
                                 <tr>
                                     <td><a href="/show_pembelian/{{ $p->id_pembelian }}"> {{ $p->id_pembelian }} </a></td>
                                     <td>{{ $p->created_at }}</td>
                                     <td>{{ $p->total_harga }}</td>
                                     <td>{{ $p->uang }}</td>
                                     <td>{{ $p->kembalian }}</td>
-                                    <td>{{ $user->username }}</td>
+                                    <td> <a href="riwayatByUser/{{ $p->id_user }}">{{ $user->username }}</a> </td>
                                     @if (Auth::user()->role == 'manager')
                                         <td>
                                             {{-- <a href="/edit_pembelian/{{ $p->id_pembelian }}" class="btn btn-primary">edit</a> --}}

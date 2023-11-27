@@ -143,7 +143,10 @@
                                 <tbody>
                                     @foreach ($produk as $p)
                                         <tr>
-                                            <td>{{ $p->nama }}</td>
+                                            <td>{{ $p->nama }}
+                                            <br>
+                                            {{ $p->kode_barang }}
+                                            </td>
                                             <td>Rp.{{ $p->harga }}</td>
                                             <td>
                                                 <form action="/to_cart" method="POST">

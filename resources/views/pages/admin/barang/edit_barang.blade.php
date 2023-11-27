@@ -14,12 +14,23 @@
                 <form action="/update_produk" method="POST">
                     @csrf
                     <label for=""> <b>Nama Barang/Produk</b> </label>
-                    <input type="text" name="nama" class="form-control " style="width:20rem" value="{{ $barang->nama }}" required>
+                    <input type="text" name="nama" class="form-control " style="width:20rem"
+                        value="{{ $barang->nama }}" required>
                     <label for=""> <b>Harga</b> </label>
-                    <input type="number" name="harga" class="form-control " style="width:20rem" value="{{ $barang->harga }}" required>
+                    <input type="number" name="harga" class="form-control " style="width:20rem"
+                        value="{{ $barang->harga }}" required>
                     <label for=""> <b>Kode Barang</b> </label>
-                    <input type="text" name="kode_barang" class="form-control " style="width:20rem" value="{{ $barang->kode_barang }}">
+                    <input type="text" name="kode_barang" class="form-control " style="width:20rem"
+                        value="{{ $barang->kode_barang }}">
                     <br>
+                    <div class="input-group" style="width:20rem">
+                        <select class="form-control" id="inputGroupSelect01" style="width:20rem"
+                            value="{{ $barang->kode_barang }}" name="jenis" required>
+                            <option value="makanan">Makanan</option>
+                            <option value="minuman">Minuman</option>
+                            <option value="barang">barang</option>
+                        </select>
+                    </div><br>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>

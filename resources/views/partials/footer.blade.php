@@ -37,8 +37,12 @@
 <script src="{{ asset('asset') }}/js/demo/chart-pie-demo.js"></script>
 <script>
     $(document).ready(function() {
-        $('#dataTable').DataTable();
-        $('#dataTableRiwayatPerHari').DataTable();
+        $('#dataTable').DataTable({
+            "scrollX": false
+        });
+        $('#dataTableRiwayatPerHari').DataTable({
+            "scrollX": false
+        });
     });
 </script>
 

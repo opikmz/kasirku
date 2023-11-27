@@ -45,7 +45,6 @@ class riwayatPembelianController extends Controller
     {
         $id = id_pembelian::where('id_pembelian',$id_pembelian)->get()->first();
         $pembelian = pembelian::where('id_pembelian',$id_pembelian)->get();
-
         return view('pages.admin.show_riwayat',compact('id','pembelian'));
     }
 
@@ -77,5 +76,10 @@ class riwayatPembelianController extends Controller
         $pembelian->delete();
 
         return redirect()->route('riwayat_pembelian');
+    }
+    public function riwayatByUser(string $id_user)
+    {
+        $pembelian = id_pembelian::where('id_user',$id_user)->get();
+        return view('pages.admin.riwayatByUser',compact('pembelian'));
     }
 }

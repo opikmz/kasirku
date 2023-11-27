@@ -19,6 +19,14 @@
                     <input type="number" name="harga" class="form-control " style="width:20rem">
                     <label for=""> <b>Kode Barang</b> </label>
                     <input type="text" name="kode_barang" class="form-control " style="width:20rem">
+                    <label for=""> <b>Jenis</b> </label>
+                    <div class="input-group" style="width:20rem">
+                        <select class="form-control" id="inputGroupSelect01" style="width:20rem" name="jenis" required>
+                            <option value="makanan" >Makanan</option>
+                            <option value="minuman" >Minuman</option>
+                            <option value="barang"  >barang</option>
+                        </select>
+                    </div><br>
                     <br>
                     <button type="submit" class="btn btn-primary">Tambahkan</button>
                 </form>
