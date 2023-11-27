@@ -74,7 +74,7 @@ class barangController extends Controller
             'nama' => 'required',
             'harga' => 'required',
         ]);
-// dd($request->harga);
+// dd($request->all());
         $barang->update([
             'nama' => $request->nama,
             'harga' => $request->harga,

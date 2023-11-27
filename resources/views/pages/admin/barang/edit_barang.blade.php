@@ -11,7 +11,7 @@
                 <h6 class="m-0 font-weight-bold text-primary"> Form Edit Produk</h6>
             </div>
             <div class="card-body">
-                <form action="/update_produk" method="POST">
+                <form action="/update_produk/{{ $barang->id_barang }}" method="POST">
                     @csrf
                     <label for=""> <b>Nama Barang/Produk</b> </label>
                     <input type="text" name="nama" class="form-control " style="width:20rem"

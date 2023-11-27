@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit_produk/{id_barang}', [barangController::class, 'edit'])->name('edit_produk');
     Route::get('/destroy_produk/{id_barang}', [barangController::class, 'destroy'])->name('delete_produk');
     Route::post('/store_produk', [barangController::class, 'store'])->name('store_produk');
-    Route::post('/update_produk', [barangController::class, 'update'])->name('update_produk');
+    Route::post('/update_produk/{barang}', [barangController::class, 'update'])->name('update_produk');
     //Keuangan
     Route::get('/riwayat_pembelian', [riwayatPembelianController::class, 'index'])->name('riwayat_pembelian');
     Route::get('/destroy_pembelian/{id_pembelian}', [riwayatPembelianController::class, 'destroy'])->name('destroy_pembelian');

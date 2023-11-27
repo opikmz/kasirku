@@ -14,7 +14,7 @@ class barang extends Model
     protected $fillable = [
         'nama',
         'harga',
-        'kode_barang',
+        'kode_barang',  
         'jenis',
     ];
     public function toPembelian()
